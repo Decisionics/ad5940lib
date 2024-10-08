@@ -25,7 +25,7 @@
  * Recommend to define this in your compiler.
  * */
 //#define CHIPSEL_M355      /**< ADuCM355 */
-//#define CHIPSEL_594X      /**< AD5940 or AD5941 */
+#define CHIPSEL_594X      /**< AD5940 or AD5941 */
 
 /* library version number */
 #define AD5940LIB_VER_MAJOR       0    /**< Major number */
@@ -4196,6 +4196,11 @@
 
 #define PARA_CHECK(n)            /** add parameter check, Add DEBUG switch  */
 
+// This ifdef allows the header to be used in platformio
+#ifdef __cplusplus
+extern "C" {
+#endif
+	
 /** 
  * @} MISC_Block_Const
  * @} MISC_Block
@@ -4930,6 +4935,10 @@ uint32_t  AD5940_MCUResourceInit(void *pCfg);
 /**
  * @} Library_Interface
 */
+
+#ifdef __cplusplus
+}
+#endif
 
 
 /**
